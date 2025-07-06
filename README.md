@@ -37,14 +37,22 @@ Hospital readmissions are costly and often avoidable. The goal is to build a **c
 
 ## 📁 Project Structure
 hospital_readmission_app/
+
 │
 ├── MAIN.py # Streamlit frontend code
+
 ├── model_matrics.pkl # Trained ML model evaluation matrices   (pickle format)
+
 ├── requirements.txt # Project dependencies
+
 ├── README.md # Project documentation
+
 |-- stacking_model.pkl #trained ML model(pickle format)
+
 |-- feature_selector.pkl
+
 ├── diabetic_data.csv # Sample input CSV file
+
 
 
 ## Model Info
@@ -60,10 +68,10 @@ StackingClassifier with base learners:
 
 ## Model Performance
     Metric	Value (%)
-    Accuracy	81.59
-    Precision	91
+    Accuracy	  81.59
+    Precision	  91
     Recall	    74
-    F1-Score	82
+    F1-Score	  82
     ROC AUC	    89.8
 
 
@@ -85,7 +93,8 @@ Matplotlib, Seaborn – visualization
 Pickle – model serialization
 
 # processes
-- select the dataset named "diabetic_data.csv " from kaggle 
+- select the dataset named "diabetic_data.csv " from kaggle
+
 - perform EDA
 - preprocess and clean the data 
 - feature Eng.
@@ -115,7 +124,9 @@ Pickle – model serialization
 
 ## Author
   Sougata Maity
+  
   https://www.linkedin.com/in/sougatamaity501/
+  
   maitysougata420@gmail.com
 
 
