@@ -208,13 +208,16 @@ if submitted:
         pdf.set_font("Arial", style='I', size=12)
         pdf.cell(200, 10, txt="Authorized by: Sougata Maity", ln=True, align='R')
         # Save to bytes
-        return pdf.output(dest='S')
+        pdf_string = pdf.output(dest='S')
+        return pdf_string.encode('latin1')
     #download button
     pdf_bytes = create_pdf_report(input_dict, prediction, proba)
-    b64 = base64.b64encode(pdf_bytes).decode()
-
-    href = f'<a href="data:application/octet-stream;base64,{b64}" download="readmission_report.pdf">📄 Download Prediction Report (PDF)</a>'
-    st.markdown(href, unsafe_allow_html=True)
+    if pdf_bytes:
+        b64 = base64.b64encode(pdf_bytes).decode()
+        href = f'<a href="data:application/octet-stream;base64,{b64}" download="readmission_report.pdf">📄 Download Prediction Report (PDF)</a>'
+        st.markdown(href, unsafe_allow_html=True)
+    else:
+        st.error("❌ Failed to generate PDF.")
 
 # ---------------------
 # Model Information & Evaluation
