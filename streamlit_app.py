@@ -166,13 +166,14 @@ if submitted:
         pdf = FPDF()
         pdf.add_page()
         pdf.set_font("Arial", size=12)
-        # Add watermark
+# Add watermark
+        '''
         pdf.set_text_color(200, 200, 200)
         pdf.set_font("Arial", size=40)
         pdf.rotate(45, x=None, y=None)
         pdf.text(20, 100, "Maity-enp")
         pdf.rotate(0)
-
+        '''
         pdf.set_font("Arial", style='B', size=14)
         pdf.cell(200, 10, txt=" Hospital Readmission Prediction Report", ln=True, align='C')
         pdf.set_font("Arial", size=12)
